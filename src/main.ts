@@ -5,6 +5,6 @@ import './config/redis.js';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors(['http://localhost:5173/']);
-  await app.listen(process.env.PORT ?? 3001);
+  await app.listen(process.env.PORT ?? 3000);
 }
 await bootstrap();
