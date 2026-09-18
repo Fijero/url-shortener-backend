@@ -3,8 +3,15 @@ import { redisClient } from '../config/redis.js';
 
 @Injectable()
 export class ShortenService {
-  getUrls(): string[] {
-    return [];
+
+  async getUrls(): Promise<string[]> {
+    try {
+      const data = await redisClient.keys('URL*');
+
+      return data;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async processUrl(url: string): Promise<any> {
