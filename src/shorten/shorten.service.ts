@@ -53,7 +53,7 @@ export class ShortenService {
         }
       }
 
-      return `https://short-url.fijero.dev/${uniqueKey}`;
+      return `https://short-url-api.fijero.dev/${uniqueKey}`;
     } catch (error) {
       throw error;
     }
