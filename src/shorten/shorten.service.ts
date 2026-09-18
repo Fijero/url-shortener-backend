@@ -6,7 +6,7 @@ export class ShortenService {
 
   async getUrls(): Promise<string[]> {
     try {
-      const data = await redisClient.keys('URL*');
+      const data = await redisClient.keys('*');
 
       return data;
     } catch (error) {
